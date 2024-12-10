@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Простое резюме</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+  <style>
+    body {
+      font-family: 'Open Sans', sans-serif;
+    }
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+    .header-info p {
+      line-height: 1.6;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .section-title {
+      border-bottom: 2px solid #ddd;
+      padding-bottom: 4px;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+    .list-disc li {
+      line-height: 1.6;
+    }
+    .button {
+      background-color: #4C8BF5;
+      color: white;
+      font-size: 1rem;
+      padding: 12px 20px;
+      border-radius: 5px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #3a6ecf;
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+  <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-8" id="resume-content">
+    <!-- Раздел Заголовок -->
+    <header class="text-center mb-6">
+      <h1 class="text-3xl font-bold text-gray-800">Гусев Григорий</h1>
+      <p class="text-lg text-gray-600">Backend-разработчик</p>
+      <div class="header-info text-gray-500">
+        <p>Email: <a href="mailto:gusevgrigorijem1@gmail.com" class="text-blue-500">gusevgrigorijem1@gmail.com</a> | Телефон: <a href="tel:+79176171196" class="text-blue-500">(917) 617-1196</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/gusev-grigory-3a5163254" class="text-blue-500">www.linkedin.com/in/gusev-grigory-3a5163254</a> | GitHub: <a href="https://github.com/gusevgrishaem1" class="text-blue-500">github.com/gusevgrishaem1</a></p>
+      </div>
+    </header>
+
+    <!-- Раздел О себе -->
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 section-title">Обо мне</h2>
+      <p class="text-gray-600 mt-2">
+        Меня зовут Григорий, и я разработчик программного обеспечения с сильной страстью к созданию решений как для бизнеса, так и для пользователей.
+        Моя любовь к программированию началась в студенческие годы, и с тех пор 
+        я активно изучаю различные области разработки, включая веб-разработку, создание игр и многое другое.
+      </p>
+    </section>
+
+    <!-- Раздел Образование -->
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 section-title">Образование</h2>
+      <ul class="list-disc ml-6">
+        <li>
+          <span class="font-semibold">Бакалавр в области информатики</span> - Самарский университет, Самара, 2022
+        </li>
+      </ul>
+    </section>
+
+    <!-- Раздел Опыт работы -->
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 section-title">Опыт работы</h2>
+      <ul class="space-y-4">
+        <li>
+            <h3 class="font-semibold text-gray-700">GO разработчик (GO, Clickhouse, Nats)</h3>
+            <p class="text-gray-600">Wildberries - удалённо | 2024 - по настоящее время</p>
+            <p class="text-gray-600">Контакт: www.wildberries.ru</p>
+            <ul class="list-disc ml-6 mt-2 text-gray-600">
+              <li>Добавил множество unit-тестов, что значительно сократило количество багов после обновления production-среды.</li>
+              <li>Оптимизировал алгоритмы, что сократило время выполнения бизнес-процессов.</li>
+              <li>Увеличил конверсию пользовательских покупок, добавив функцию поиска.</li>
+            </ul>
+          </li>
+        <li>
+          <h3 class="font-semibold text-gray-700">Java разработчик (Java, Spring, PostgreSQL, Kafka)</h3>
+          <p class="text-gray-600">IT-Services - Самара | 2023 - 2024</p>
+          <p class="text-gray-600">Контакт: serviceit.su</p>
+          <ul class="list-disc ml-6 mt-2 text-gray-600">
+            <li>Разработал и внедрил модуль для генерации пользовательских отчетов, используя Java, JasperSoft и SQL.</li>
+            <li>Оптимизировал SQL-запросы с помощью query plan.</li>
+            <li>Добавил множество unit-тестов, что значительно сократило количество багов после обновления production-среды.</li>
+          </ul>
+        </li>
+        <li>
+          <h3 class="font-semibold text-gray-700">Full Stack разработчик (JavaScript, Python, Java, PostgreSQL)</h3>
+          <p class="text-gray-600">Open Code - Самара | 2022 - 2023</p>
+          <p class="text-gray-600">Контакт: www.o-code.ru</p>
+          <ul class="list-disc ml-6 mt-2 text-gray-600">
+            <li>Разработал и внедрил модуль для хранения пользовательских файлов, используя Java (Spring Boot) для backend и JavaScript (ExtJS) для frontend.</li>
+            <li>Оптимизировал процесс вычислений, что значительно сократило время выполнения.</li>
+            <li>Разработал Python-скрипты для автоматизации рутинных задач.</li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <!-- Раздел Навыки -->
+    <section class="mb-6">
+      <h2 class="text-2xl font-semibold text-gray-800 section-title">Навыки</h2>
+      <ul class="grid grid-cols-2 gap-4 mt-2 text-gray-600">
+        <li>GO</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>JavaScript</li>
+        <li>HTML & CSS</li>
+        <li>SQL</li>
+      </ul>
+    </section>
+
+  </div>
+
+  <div class="text-center mt-4 mb-2">
+    <button onclick="downloadPDF()" class="button">Скачать PDF</button>
+  </div>
+
+  <script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+  
+      // Создаем PDF с использованием html2canvas
+      html2canvas(document.getElementById("resume-content"), {
+        useCORS: true, 
+        logging: true, 
+        onrendered: function(canvas) {
+          const imgData = canvas.toDataURL("image/png");
+          doc.addImage(imgData, 'PNG', 10, 10, 190, 220);
+          doc.save("резюме.pdf");
+        },
+      })
+    }
+  </script>
+
+</body>
+</html>
